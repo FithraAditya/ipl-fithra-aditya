@@ -1,6 +1,5 @@
 abstract class Product {
     abstract String getName();
-    abstract Date getExpiredDate();
     /**
     * Function to get all of information about product
     */
@@ -9,25 +8,26 @@ abstract class Product {
     }
 }
 
-class Vegetable extends Product {
+abstract class FoodProduct extends Product {
+    abstract Date getExpiredDate();
+}
+
+class Vegetable extends FoodProduct {
     @Override
     String getName() {
-    return "Broccoli";
+        return "Broccoli";
     }
     @Override
     Date getExpiredDate() {
-    return new Date();
+        return new Date();
     }
 }
 
 class Smartphone extends Product {
     @Override
-    String setName() {
+    String getName() {
         return "Samsung S10+ Limited Edition";
-    }
-    @Override
-    Date setExpiredDate() {
-    return new Date(); // ???????
-    }
+    }    
 }
+
 
